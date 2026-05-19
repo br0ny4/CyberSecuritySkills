@@ -91,7 +91,7 @@ class ClaudeCodeAdapter(BaseSkillAdapter):
         self._claude_plugin_dir.mkdir(parents=True, exist_ok=True)
         
         plugin_config = {
-            "name": "cybersecurity-ai-skills-unified",
+            "name": "CyberSecuritySkills",
             "version": "1.0.0",
             "description": "全门类网络安全AI技能统一集成平台 — 900+ 安全技能",
             "author": "Unified Security Skills Team",

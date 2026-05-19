@@ -94,7 +94,7 @@ class CursorAdapter(BaseSkillAdapter):
         # .cursor/skills.json - 技能注册清单
         skills_registry = {
             "version": "1.0.0",
-            "name": "cybersecurity-ai-skills-unified",
+            "name": "CyberSecuritySkills",
             "description": "全门类网络安全AI技能统一集成平台",
             "skill_count": len(self._skill_index),
             "domains": list(set(m.subdomain for m in self._skill_index.values())),

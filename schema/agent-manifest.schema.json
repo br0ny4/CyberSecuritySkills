@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/cybersecurity-ai-skills-unified/main/schema/agent-manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/br0ny4/CyberSecuritySkills/main/schema/agent-manifest.schema.json",
   "title": "Agent Integration Manifest Schema",
   "description": "跨平台 AI Agent 技能集成清单格式规范。定义技能仓库如何被各 Agent 平台 (Trae/Flocks/Claude Code/Cursor/DeepSeek V4) 自动发现和调用。",
   "type": "object",

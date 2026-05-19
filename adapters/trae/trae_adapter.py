@@ -122,7 +122,7 @@ class TraeAdapter(BaseSkillAdapter):
             "$schema": "./schema/agent-manifest.schema.json",
             "agent_manifest_version": "1.1.0",
             "project": {
-                "name": "cybersecurity-ai-skills-unified",
+                "name": "CyberSecuritySkills",
                 "description": "全门类网络安全AI技能统一集成平台",
                 "total_skills": len(self._skill_index),
                 "language": "zh-CN",

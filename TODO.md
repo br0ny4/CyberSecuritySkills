@@ -321,7 +321,7 @@
 - [ ] GitHub Release 创建
   - [ ] Release Notes
   - [ ] 预编译 artifact (index.json, schema JSON, 适配器 wheel包)
-- [ ] PyPI 发布 (pip install cybersecurity-ai-skills-unified)
+- [ ] PyPI 发布 (pip install CyberSecuritySkills)
 - [ ] 文档站部署 (GitHub Pages)
 - [ ] 演示视频 / 快速入门指南
 

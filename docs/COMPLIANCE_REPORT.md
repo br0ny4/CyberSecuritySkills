@@ -1,6 +1,6 @@
 # 🔐 项目合规性审查与生态适配清单
 
-> **项目名称**: cybersecurity-ai-skills-unified  
+> **项目名称**: CyberSecuritySkills  
 > **版本**: v1.0.0-pre  
 > **审查日期**: 2026-05-19  
 > **审查范围**: 许可证合规、代码安全、数据隐私、生态适配
@@ -20,7 +20,7 @@
 
 | 项目 | 许可证 | 兼容上游 | 说明 |
 |------|--------|----------|------|
-| cybersecurity-ai-skills-unified | MIT | ✅ | MIT与Apache-2.0兼容 |
+| CyberSecuritySkills | MIT | ✅ | MIT与Apache-2.0兼容 |
 
 ### 1.3 合规要求清单
 

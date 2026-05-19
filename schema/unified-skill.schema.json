@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/cybersecurity-ai-skills-unified/main/schema/unified-skill.schema.json",
+  "$id": "https://raw.githubusercontent.com/br0ny4/CyberSecuritySkills/main/schema/unified-skill.schema.json",
   "title": "Unified Cybersecurity AI Skill Schema",
   "description": "跨平台/跨Agent网络安全AI技能统一数据格式标准。融合 agentskills.io 开放标准与国内Agent平台规范，支持中英双语、多框架映射与AI Agent自动发现。",
   "type": "object",

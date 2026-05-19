@@ -92,7 +92,7 @@
 ## 🏗️ 项目架构
 
 ```
-cybersecurity-ai-skills-unified/
+CyberSecuritySkills/
 │
 ├── README.md                          # 项目总览（本文件）
 ├── PROJECT_PLAN.md                    # 项目总体规划
@@ -158,8 +158,8 @@ cybersecurity-ai-skills-unified/
 
 ### 1. 克隆项目
 ```bash
-git clone https://github.com/your-org/cybersecurity-ai-skills-unified.git
-cd cybersecurity-ai-skills-unified
+git clone https://github.com/br0ny4/CyberSecuritySkills.git
+cd CyberSecuritySkills
 ```
 
 ### 2. 安装依赖
@@ -179,7 +179,7 @@ python scripts/index_generator.py --source-a ../CyberSecurity-Skills --source-b 
 {
   "skills": [{
     "name": "cybersecurity-unified",
-    "path": "/path/to/cybersecurity-ai-skills-unified",
+    "path": "/path/to/CyberSecuritySkills",
     "manifest": "schema/agent-manifest.schema.json"
   }]
 }
@@ -187,7 +187,7 @@ python scripts/index_generator.py --source-a ../CyberSecurity-Skills --source-b 
 
 **Claude Code:**
 ```bash
-npx skills add your-org/cybersecurity-ai-skills-unified
+npx skills add br0ny4/CyberSecuritySkills
 ```
 
 **Flocks:**

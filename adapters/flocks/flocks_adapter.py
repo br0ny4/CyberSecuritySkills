@@ -149,7 +149,7 @@ class FlocksAdapter(BaseSkillAdapter):
         """生成 .flocks.yaml 配置文件"""
         config = {
             "version": "1.0",
-            "name": "cybersecurity-ai-skills-unified",
+            "name": "CyberSecuritySkills",
             "description": "全门类网络安全AI技能统一集成平台 - Flocks适配",
             "skills": {
                 "source": "local",
