@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Security Framework Crosswalk — 安全框架交叉映射表",
+  "description": "MITRE ATT&CK v18、NIST CSF 2.0、MITRE ATLAS v5.4、MITRE D3FEND v1.3、NIST AI RMF 1.0、等保2.0、ISO 27001:2022 七重框架双向映射",
+  "version": "1.0.0",
+  "generated": "2026-05-19",
+
+  "frameworks": {
+    "mitre_attack": { "version": "v18", "url": "https://attack.mitre.org/versions/v18/" },
+    "nist_csf": { "version": "2.0", "url": "https://www.nist.gov/cyberframework" },
+    "mitre_atlas": { "version": "v5.4", "url": "https://atlas.mitre.org/" },
+    "mitre_d3fend": { "version": "v1.3", "url": "https://d3fend.mitre.org/" },
+    "nist_ai_rmf": { "version": "1.0", "url": "https://airc.nist.gov/AI_RMF" },
+    "cn_djbh_20": { "version": "GB/T 22239-2019", "url": "https://www.djbh.net/" },
+    "iso_27001": { "version": "2022", "url": "https://www.iso.org/standard/82875.html" }
+  },
+
+  "attack_to_nist_csf": {
+    "TA0043_Reconnaissance": ["ID.RA-01", "ID.RA-02"],
+    "TA0042_ResourceDevelopment": ["ID.RA-03", "ID.SC-01"],
+    "TA0001_InitialAccess": ["PR.AA-01", "PR.AA-02", "DE.CM-01"],
+    "TA0002_Execution": ["DE.CM-02", "DE.CM-04", "PR.PS-01"],
+    "TA0003_Persistence": ["DE.CM-03", "PR.PS-02"],
+    "TA0004_PrivilegeEscalation": ["PR.AA-03", "PR.AA-04", "DE.CM-06"],
+    "TA0005_DefenseEvasion": ["DE.CM-05", "PR.PS-03"],
+    "TA0006_CredentialAccess": ["PR.AA-05", "DE.CM-07"],
+    "TA0007_Discovery": ["DE.CM-08"],
+    "TA0008_LateralMovement": ["DE.CM-09", "PR.PS-04"],
+    "TA0009_Collection": ["DE.CM-10", "PR.DS-01"],
+    "TA0011_CommandAndControl": ["DE.CM-11", "DE.AE-01"],
+    "TA0010_Exfiltration": ["DE.CM-12", "PR.DS-02"],
+    "TA0040_Impact": ["RS.RP-01", "RS.MI-01", "RC.RP-01"]
+  },
+
+  "attack_to_d3fend": {
+    "TA0003_Persistence": ["D3-PSMD", "D3-SBLA", "D3-HD"],
+    "TA0004_PrivilegeEscalation": ["D3-CAA", "D3-PPL", "D3-KH"],
+    "TA0005_DefenseEvasion": ["D3-EI", "D3-OA", "D3-SEA"],
+    "TA0006_CredentialAccess": ["D3-DM", "D3-PTH", "D3-LSA"],
+    "TA0008_LateralMovement": ["D3-LM", "D3-NTA", "D3-SEA"],
+    "TA0011_CommandAndControl": ["D3-NTA", "D3-DNSTA", "D3-PCA"],
+    "TA0010_Exfiltration": ["D3-DLP", "D3-ETA", "D3-DNSEM"],
+    "TA0040_Impact": ["D3-EI", "D3-FCR", "D3-BA"],
+    "TA0001_InitialAccess": ["D3-PA", "D3-WAF", "D3-EPA"],
+    "TA0002_Execution": ["D3-PSMD", "D3-SBLA", "D3-HD"]
+  },
+
+  "attack_to_cn_djbh": {
+    "TA0001_InitialAccess": ["安全通信网络-边界防护", "安全区域边界-访问控制"],
+    "TA0002_Execution": ["安全计算环境-恶意代码防范", "安全管理中心-集中管控"],
+    "TA0003_Persistence": ["安全计算环境-入侵防范"],
+    "TA0004_PrivilegeEscalation": ["安全计算环境-访问控制"],
+    "TA0005_DefenseEvasion": ["安全计算环境-安全审计"],
+    "TA0006_CredentialAccess": ["安全计算环境-身份鉴别"],
+    "TA0008_LateralMovement": ["安全区域边界-访问控制", "安全通信网络-通信传输"],
+    "TA0010_Exfiltration": ["安全计算环境-数据完整性", "安全计算环境-数据保密性"],
+    "TA0040_Impact": ["安全计算环境-数据备份恢复", "安全管理中心-应急响应"]
+  },
+
+  "nist_csf_to_iso27001": {
+    "GV.OC": ["A.5.1", "A.5.2"],
+    "GV.RM": ["A.5.3", "A.5.7"],
+    "GV.RR": ["A.5.5", "A.5.6"],
+    "GV.SC": ["A.5.19", "A.5.20", "A.5.21"],
+    "ID.AM": ["A.5.9", "A.5.10", "A.5.13"],
+    "ID.RA": ["A.5.4", "A.5.5", "A.5.29"],
+    "PR.AA": ["A.5.15", "A.5.16", "A.5.17", "A.5.18"],
+    "PR.AT": ["A.6.3", "A.6.8"],
+    "PR.DS": ["A.5.10", "A.5.11", "A.5.12", "A.5.14"],
+    "PR.PS": ["A.8.1", "A.8.8", "A.8.9"],
+    "PR.IR": ["A.8.2", "A.8.3", "A.8.21"],
+    "DE.AE": ["A.8.15", "A.8.16"],
+    "DE.CM": ["A.8.15", "A.8.16", "A.8.17"],
+    "RS.MA": ["A.5.24", "A.5.25", "A.5.26"],
+    "RS.AN": ["A.5.25", "A.5.27"],
+    "RS.MI": ["A.5.26", "A.5.28", "A.6.8"],
+    "RC.RP": ["A.5.29", "A.5.30", "A.8.14"]
+  },
+
+  "atlas_to_nist_ai_rmf": {
+    "AML.T0043_MLSupplyChain": ["MAP-5.1", "MANAGE-4.1"],
+    "AML.T0047_MLArtifact": ["MEASURE-2.6", "MEASURE-2.7"],
+    "AML.T0050_DataLeakage": ["MAP-3.5", "MANAGE-4.2"],
+    "AML.T0051_PromptInjection": ["MEASURE-2.8", "MANAGE-4.3"],
+    "AML.T0054_RedTeaming": ["MEASURE-2.11", "MAP-5.2"],
+    "AML.T0048_AgentPermissions": ["GOVERN-3.1", "MANAGE-4.1"],
+    "AML.T0045_ModelTheft": ["MEASURE-2.12", "MANAGE-2.3"]
+  },
+
+  "domains_to_frameworks": {
+    "reconnaissance": {
+      "primary": "mitre_attack",
+      "tactics": ["TA0043"],
+      "nist_csf": ["ID.AM-01", "ID.RA-01"],
+      "cn_djbh": ["安全通信网络"]
+    },
+    "vulnerability-scanning": {
+      "primary": "mitre_attack",
+      "tactics": ["TA0043"],
+      "nist_csf": ["ID.RA-01", "ID.RA-02"],
+      "cn_djbh": ["安全计算环境-入侵防范"]
+    },
+    "exploitation": {
+      "primary": "mitre_attack",
+      "tactics": ["TA0002", "TA0001"],
+      "nist_csf": ["DE.CM-01"],
+      "cn_djbh": ["安全计算环境"]
+    },
+    "incident-response": {
+      "primary": "nist_csf",
+      "functions": ["RS"],
+      "nist_csf_categories": ["RS.MA", "RS.AN", "RS.MI"],
+      "cn_djbh": ["安全管理中心-应急响应"],
+      "iso_27001": ["A.5.24", "A.5.25", "A.5.26", "A.5.27", "A.5.28"]
+    },
+    "threat-hunting": {
+      "primary": "nist_csf",
+      "functions": ["DE"],
+      "nist_csf_categories": ["DE.CM", "DE.AE"],
+      "d3fend": ["D3-HD", "D3-NTA", "D3-BA"]
+    },
+    "cloud-security": {
+      "primary": "nist_csf",
+      "functions": ["PR", "DE"],
+      "cn_djbh": ["安全计算环境"],
+      "iso_27001": ["A.5.10", "A.8.9"]
+    },
+    "llm-security": {
+      "primary": "mitre_atlas",
+      "tactics": ["AML.T0051", "AML.T0050"],
+      "nist_ai_rmf": ["MEASURE-2", "MANAGE-4"],
+      "nist_csf": ["GV.SC", "ID.RA"]
+    },
+    "ics-ot-security": {
+      "primary": "nist_csf",
+      "functions": ["ID", "PR", "DE", "RS"],
+      "cn_djbh": ["安全计算环境", "工业控制系统安全扩展"],
+      "iso_27001": ["A.5.10", "A.8.29"]
+    },
+    "governance-compliance": {
+      "primary": "nist_csf",
+      "functions": ["GV"],
+      "cn_djbh": ["安全管理中心", "安全管理制度"],
+      "iso_27001": ["A.5.1", "A.5.2", "A.5.3"]
+    },
+    "digital-forensics": {
+      "primary": "nist_csf",
+      "functions": ["RS"],
+      "nist_csf_categories": ["RS.AN"],
+      "cn_djbh": ["安全管理中心-审计"]
+    }
+  }
+}

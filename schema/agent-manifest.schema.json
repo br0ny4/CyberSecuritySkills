@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/cybersecurity-ai-skills-unified/main/schema/agent-manifest.schema.json",
+  "title": "Agent Integration Manifest Schema",
+  "description": "跨平台 AI Agent 技能集成清单格式规范。定义技能仓库如何被各 Agent 平台 (Trae/Flocks/Claude Code/Cursor/DeepSeek V4) 自动发现和调用。",
+  "type": "object",
+  "required": ["agent_manifest_version", "project", "agent_integration"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "引用本 schema 的 URL"
+    },
+    "agent_manifest_version": {
+      "type": "string",
+      "enum": ["1.0.0", "1.1.0"],
+      "description": "Agent Manifest 格式版本"
+    },
+    "project": {
+      "type": "object",
+      "required": ["name", "description", "total_skills"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "项目名称 (用于 npx skills add 和 flocks skill install)"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "项目简述 (显示在 Agent 技能市场中)"
+        },
+        "total_skills": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "技能总数"
+        },
+        "total_modules": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "模块/领域总数"
+        },
+        "language": {
+          "type": "string",
+          "enum": ["zh-CN", "en-US", "bilingual"],
+          "description": "主要语言"
+        },
+        "framework": {
+          "type": "string",
+          "description": "核心框架 (如 PTES)"
+        },
+        "standards": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "参考的安全标准列表"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "description": "项目主页"
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "description": "源码仓库地址"
+        }
+      }
+    },
+    "agent_integration": {
+      "type": "object",
+      "required": ["entry_point", "schema"],
+      "properties": {
+        "entry_point": {
+          "type": "string",
+          "description": "AI Agent 入口索引文件 (如 index.json)"
+        },
+        "schema": {
+          "type": "string",
+          "description": "技能数据 Schema 文件路径"
+        },
+        "api_script": {
+          "type": "string",
+          "description": "可编程 CLI 查询工具路径 (如 skill_query.py)"
+        },
+        "agent_instructions": {
+          "type": "string",
+          "description": "AI Agent 使用说明文件 (如 AGENT_USAGE.md)"
+        },
+        "plugins": {
+          "type": "object",
+          "properties": {
+            "claude_code": {
+              "type": "object",
+              "properties": {
+                "plugin_dir": { "type": "string", "default": ".claude-plugin" },
+                "install_command": { "type": "string", "default": "npx skills add {repo}" },
+                "config_file": { "type": "string", "default": "plugin.json" }
+              }
+            },
+            "trae": {
+              "type": "object",
+              "properties": {
+                "skills_dir": { "type": "string", "default": ".trae/skills" },
+                "mcp_support": { "type": "boolean", "default": true }
+              }
+            },
+            "flocks": {
+              "type": "object",
+              "properties": {
+                "config_file": { "type": "string", "default": ".flocks.yaml" },
+                "yaml_skills_dir": { "type": "string", "default": "flocks-skills" },
+                "max_batch_skills": { "type": "integer", "default": 10 },
+                "safeskill_required": { "type": "boolean", "default": false }
+              }
+            },
+            "cursor": {
+              "type": "object",
+              "properties": {
+                "config_file": { "type": "string", "default": ".cursor/skills.json" },
+                "skills_dir": { "type": "string", "default": ".cursor/skills" }
+              }
+            },
+            "deepseek_v4": {
+              "type": "object",
+              "properties": {
+                "adapter_module": { "type": "string", "default": "adapters.deepseek_v4" },
+                "supported_models": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "optimized_for_1m_context": { "type": "boolean", "default": true }
+              }
+            }
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "平台能力声明 (供 Agent 自动发现)",
+      "properties": {
+        "list_modules": {
+          "type": "object",
+          "required": ["description", "invocation_hint"],
+          "properties": {
+            "description": { "type": "string" },
+            "invocation_hint": { "type": "string" }
+          }
+        },
+        "list_skills": {
+          "type": "object",
+          "required": ["description", "invocation_hint"],
+          "properties": {
+            "description": { "type": "string" },
+            "invocation_hint": { "type": "string" }
+          }
+        },
+        "get_skill": {
+          "type": "object",
+          "required": ["description", "invocation_hint"],
+          "properties": {
+            "description": { "type": "string" },
+            "invocation_hint": { "type": "string" }
+          }
+        },
+        "search_skills": {
+          "type": "object",
+          "required": ["description", "invocation_hint"],
+          "properties": {
+            "description": { "type": "string" },
+            "invocation_hint": { "type": "string" }
+          }
+        },
+        "validate": {
+          "type": "object",
+          "required": ["description", "invocation_hint"],
+          "properties": {
+            "description": { "type": "string" },
+            "invocation_hint": { "type": "string" }
+          }
+        }
+      }
+    },
+    "framework_mappings": {
+      "type": "object",
+      "description": "支持的框架映射",
+      "properties": {
+        "mitre_attack": { "type": "string", "description": "MITRE ATT&CK 版本" },
+        "nist_csf": { "type": "string", "description": "NIST CSF 版本" },
+        "mitre_atlas": { "type": "string", "description": "MITRE ATLAS 版本" },
+        "mitre_d3fend": { "type": "string", "description": "MITRE D3FEND 版本" },
+        "nist_ai_rmf": { "type": "string", "description": "NIST AI RMF 版本" },
+        "cn_standard": { "type": "string", "description": "国内合规标准" },
+        "iso_27001": { "type": "string", "description": "ISO 27001 版本" }
+      }
+    },
+    "invocation_examples": {
+      "type": "array",
+      "description": "多平台调用示例",
+      "items": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string" },
+          "purpose": { "type": "string" },
+          "command": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}
