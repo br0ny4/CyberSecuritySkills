@@ -1,91 +1,95 @@
-# 🔒 CyberSecurity AI Skills Unified — 全门类网络安全AI技能统一集成平台
+# 🔒 CyberSecuritySkills — 全门类网络安全AI技能统一集成平台
 
 > **The Unified Cross-Agent Cybersecurity Skill Framework for AI Agents**
 >
-> 融合 Hi-FullHouse/CyberSecurity-Skills (195技能/39领域) 与 mukul975/Anthropic-Cybersecurity-Skills (754技能/26领域)
-> 
-> **总计覆盖: 41+ 安全领域 | 900+ AI可调用技能 | 5+ 框架映射 | 6+ AI Agent 平台原生支持**
+> 融合 7 大源仓库 | 41+ 安全领域 | 800+ AI可调用技能 | 7重框架映射 | 6+ AI Agent 平台原生支持
 
 ---
 
 ## 📋 项目概述
 
-本项目整合全球两大网络安全AI技能开源仓库的最佳实践，构建一套**全门类、跨平台、标准化**的网络安全AI技能统一集成平台。覆盖从渗透测试、威胁检测、应急响应到安全审计、云安全、工控安全等全部网络安全细分场景，确保技能可在 **Trae**、**Flocks**、**Claude Code**、**Cursor**、**DeepSeek V4** 等主流AI Agent平台中无缝调用。
+本项目整合 GitHub 上高质量网络安全 AI 技能仓库，构建一套**全门类、跨平台、标准化**的网络安全AI技能统一集成平台。
 
 ### 五大核心目标
 
 | # | 目标 | 交付物 |
 |---|------|--------|
 | 1 | 全量技能标准化整理 | 统一Schema + 全门类技能目录 + 索引系统 |
-| 2 | 多平台适配开发 | Flocks/Trae/Claude Code/Cursor 适配器 |
+| 2 | 多平台适配开发 | Flocks/Trae/Claude Code/Cursor/DeepSeek V4 适配器 |
 | 3 | 统一接口体系 | Cross-Agent Unified Interface (CAUI) |
 | 4 | DeepSeek V4专项优化 | 调用稳定性 + 执行效率 + 成本优化 |
-| 5 | 长周期迭代规划 | 4阶段15里程碑 TODO + 版本发布计划 |
+| 5 | 长周期迭代 + 生态推广 | 4阶段15里程碑 + Flocks/Trae官方推荐 |
+
+---
+
+## 🌐 外部源仓库 (7库融合)
+
+| # | 仓库 | Stars | 技能贡献 | 许可证 |
+|---|------|-------|----------|--------|
+| 1 | [Hi-FullHouse/CyberSecurity-Skills](https://github.com/Hi-FullHouse/CyberSecurity-Skills) | - | 195技能 / 39领域 | MIT |
+| 2 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | - | 754技能 / 26领域 / 5框架映射 | Apache-2.0 |
+| 3 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 42K⭐ | +1 安全硬核技能 / 安全审计Agent | MIT |
+| 4 | [vercel-labs/deepsec](https://github.com/vercel-labs/deepsec) | 新项目 | +1 Agent漏洞扫描管线 | Apache-2.0 |
+| 5 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | 49K⭐ | +2 安全插件 (CVE + AI防御) | MIT |
+| 6 | [SkillsMP.com](https://skillsmp.com/categories/security) | 38K安全技能 | 持续发现新技能 (聚合平台) | 各仓库 |
+| 7 | [SkillStore.io](https://skillstore.io/zh-hans) | 安全审核 | 安全审查通过的技能 (可信源) | 各仓库 |
+
+> 📖 详细源分析: [docs/SOURCE_CATALOG.md](docs/SOURCE_CATALOG.md)
 
 ---
 
 ## 🗺️ 技能覆盖全景 (41大领域)
 
-### 🔴 红队/攻击面 (Offensive — 14 领域)
+### 🔴 红队/攻击面 (14 领域) · 🔵 蓝队/防御面 (14 领域)
 
-| ID | 领域 | 来源 | 技能数 | 对标框架 |
-|----|------|------|--------|----------|
-| 01 | 信息搜集 Reconnaissance | A+B | 25+ | PTES / ATT&CK TA0043 |
-| 02 | 漏洞扫描 Vulnerability Scanning | A+B | 20+ | PTES / ATT&CK TA0043 |
-| 03 | 漏洞利用 Exploitation | A+B | 30+ | PTES / ATT&CK TA0002 |
-| 04 | 权限提升 Privilege Escalation | A+B | 15+ | ATT&CK TA0004 |
-| 05 | 后渗透 Post-Exploitation | A+B | 15+ | PTES |
-| 06 | 横向移动 Lateral Movement | A+B | 15+ | ATT&CK TA0008 |
-| 07 | 持久化 Persistence | A+B | 20+ | ATT&CK TA0003 |
-| 08 | 痕迹清除 Covering Tracks | A+B | 10+ | ATT&CK TA0005 |
-| 09 | 社会工程学 Social Engineering | A+B | 20+ | ATT&CK TA0001 |
-| 10 | 无线安全 Wireless Security | A | 5+ | PTES |
-| 11 | 移动安全 Mobile Security | A+B | 15+ | OWASP MSTG |
-| 12 | 逆向工程 Reverse Engineering | A+B | 18+ | ATT&CK TA0002 |
-| 13 | 渗透测试 Pentesting | B | 23+ | PTES / OWASP |
-| 14 | 红蓝对抗 Red/Blue Team | A+B | 30+ | ATT&CK Enterprise |
+| ID | 领域 | 技能数 | 对标框架 |
+|----|------|--------|----------|
+| 01 | 信息搜集 Reconnaissance | 25+ | PTES / ATT&CK TA0043 |
+| 02 | 漏洞扫描 Vulnerability Scanning | 20+ | PTES / ATT&CK TA0043 |
+| 03 | 漏洞利用 Exploitation | 30+ | PTES / ATT&CK TA0002 |
+| 04 | 权限提升 Privilege Escalation | 15+ | ATT&CK TA0004 |
+| 05 | 后渗透 Post-Exploitation | 15+ | PTES |
+| 06 | 横向移动 Lateral Movement | 15+ | ATT&CK TA0008 |
+| 07 | 持久化 Persistence | 20+ | ATT&CK TA0003 |
+| 08 | 痕迹清除 Covering Tracks | 10+ | ATT&CK TA0005 |
+| 09 | 社会工程学 Social Engineering | 20+ | ATT&CK TA0001 |
+| 10 | 无线安全 Wireless Security | 5+ | PTES |
+| 11 | 移动安全 Mobile Security | 15+ | OWASP MSTG |
+| 12 | 逆向工程 Reverse Engineering | 18+ | ATT&CK TA0002 |
+| 13 | 渗透测试 Pentesting | 23+ | PTES / OWASP |
+| 14 | 红蓝对抗 Red/Blue Team | 30+ | ATT&CK Enterprise |
+| 15 | 威胁检测与狩猎 Threat Hunting | 55+ | ATT&CK / D3FEND |
+| 16 | 威胁情报 Threat Intelligence | 55+ | STIX/TAXII |
+| 17 | 应急响应 Incident Response | 32+ | NIST SP 800-61 |
+| 18 | 数字取证 Digital Forensics | 42+ | NIST SP 800-86 |
+| 19 | SOC运营 SOC Operations | 37+ | NIST CSF DE/RS |
+| 20 | 端点安全 Endpoint Security | 21+ | D3FEND |
+| 21 | 勒索软件防御 Ransomware Defense | 10+ | ATT&CK TA0040 |
+| 22 | 恶意软件分析 Malware Analysis | 39+ | ATT&CK |
+| 23 | 网络安全 Network Security | 40+ | D3FEND D3-NTA |
+| 24 | 欺骗防御 Deception Technology | 2+ | D3FEND |
+| 25 | 钓鱼防御 Phishing Defense | 16+ | ATT&CK T1566 |
+| 26 | 报告撰写 Reporting | 5+ | PTES |
+| 27 | 漏洞管理 Vulnerability Management | 31+ | NIST CSF ID.RA |
+| 28 | 安全运营 Security Operations | 36+ | NIST CSF |
 
-### 🔵 蓝队/防御面 (Defensive — 14 领域)
+### 🟢 基础设施安全 (9 领域) · 🟣 新兴专项安全 (5 领域)
 
-| ID | 领域 | 来源 | 技能数 | 对标框架 |
-|----|------|------|--------|----------|
-| 15 | 威胁检测与狩猎 Threat Hunting | B | 55+ | ATT&CK / D3FEND |
-| 16 | 威胁情报 Threat Intelligence | A+B | 55+ | STIX/TAXII |
-| 17 | 应急响应 Incident Response | A+B | 32+ | NIST SP 800-61 |
-| 18 | 数字取证 Digital Forensics | A+B | 42+ | NIST SP 800-86 |
-| 19 | SOC运营 SOC Operations | A+B | 37+ | NIST CSF DE/RS |
-| 20 | 端点安全 Endpoint Security | A+B | 21+ | D3FEND |
-| 21 | 勒索软件防御 Ransomware Defense | A+B | 10+ | ATT&CK TA0040 |
-| 22 | 恶意软件分析 Malware Analysis | B | 39+ | ATT&CK |
-| 23 | 网络流量分析 Network Traffic Analysis | B | 40+ | D3FEND D3-NTA |
-| 24 | 欺骗防御 Deception Technology | B | 2+ | D3FEND |
-| 25 | 钓鱼防御 Phishing Defense | B | 16+ | ATT&CK T1566 |
-| 26 | 报告撰写 Reporting | A | 5+ | PTES |
-| 27 | 漏洞管理 Vulnerability Management | A+B | 31+ | NIST CSF ID.RA |
-| 28 | 安全运营 Security Operations | B | 36+ | NIST CSF |
-
-### 🟢 基础设施/平台安全 (Infrastructure — 9 领域)
-
-| ID | 领域 | 来源 | 技能数 | 对标框架 |
-|----|------|------|--------|----------|
-| 29 | 云安全 Cloud Security | A+B | 68+ | CIS Benchmarks |
-| 30 | 容器安全 Container Security | A+B | 34+ | CIS K8s Benchmarks |
-| 31 | API安全 API Security | A+B | 31+ | OWASP API Top 10 |
-| 32 | 代码审计 Code Audit | A | 9+ | OWASP |
-| 33 | 供应链安全 Supply Chain Security | A+B | 5+ | SLSA / SSDF |
-| 34 | 操作系统安全 OS Security | A | 6+ | CIS Benchmarks |
-| 35 | 身份访问管理 IAM | A+B | 39+ | NIST CSF PR.AA |
-| 36 | 密码学与PKI Cryptography & PKI | A+B | 17+ | NIST SP 800-175B |
-| 37 | 零信任架构 Zero Trust | A+B | 16+ | CISA ZTMM |
-
-### 🟣 新兴/专项安全 (Emerging — 5 领域)
-
-| ID | 领域 | 来源 | 技能数 | 对标框架 |
-|----|------|------|--------|----------|
-| 38 | 大模型安全 LLM Security | A | 10+ | OWASP Top 10 for LLM / MITRE ATLAS |
-| 39 | 工控安全 ICS/OT Security | A+B | 34+ | IEC 62443 |
-| 40 | 区块链/Web3安全 Blockchain Security | A | 6+ | SCSVS |
-| 41 | 物联网安全 IoT Security | A | 6+ | OWASP IoT Top 10 |
+| ID | 领域 | 技能数 | 对标框架 |
+|----|------|--------|----------|
+| 29 | 云安全 Cloud Security | 68+ | CIS Benchmarks |
+| 30 | 容器安全 Container Security | 34+ | CIS K8s Benchmarks |
+| 31 | API安全 API Security | 31+ | OWASP API Top 10 |
+| 32 | 代码审计 Code Audit | 9+ | OWASP |
+| 33 | 供应链安全 Supply Chain Security | 5+ | SLSA / SSDF |
+| 34 | 操作系统安全 OS Security | 6+ | CIS Benchmarks |
+| 35 | 身份访问管理 IAM | 39+ | NIST CSF PR.AA |
+| 36 | 密码学与PKI Cryptography & PKI | 17+ | NIST SP 800-175B |
+| 37 | 零信任架构 Zero Trust | 16+ | CISA ZTMM |
+| 38 | 大模型安全 LLM Security | 10+ | OWASP Top 10 for LLM / MITRE ATLAS |
+| 39 | 工控安全 ICS/OT Security | 34+ | IEC 62443 |
+| 40 | 区块链/Web3安全 Blockchain Security | 6+ | SCSVS |
+| 41 | 物联网安全 IoT Security | 6+ | OWASP IoT Top 10 |
 
 ---
 
@@ -93,88 +97,54 @@
 
 ```
 CyberSecuritySkills/
-│
-├── README.md                          # 项目总览（本文件）
+├── README.md                          # 项目总览 (本文件)
 ├── PROJECT_PLAN.md                    # 项目总体规划
-├── SKILLS_INVENTORY.md                # 全门类技能清单（900+条目）
-├── TODO.md                            # 长周期迭代计划（4阶段15里程碑）
+├── SKILLS_INVENTORY.md                # 全门类技能清单 (800+条目)
+├── TODO.md                            # 4阶段15里程碑迭代计划
 ├── CHANGELOG.md                       # 版本变更记录
-├── LICENSE                            # MIT License
 │
-├── schema/                            # 统一标准化层
-│   ├── unified-skill.schema.json      # 统一技能Schema定义
+├── docs/
+│   ├── SOURCE_CATALOG.md              # 外部源仓库目录 (7源分析)
+│   └── COMPLIANCE_REPORT.md           # 合规性审查与生态适配清单
+│
+├── schema/
+│   ├── unified-skill.schema.json      # 统一技能Schema (7重框架映射)
 │   ├── agent-manifest.schema.json     # Agent集成Manifest Schema
 │   └── crosswalk.json                 # 框架交叉映射表
 │
-├── adapters/                          # 平台适配层
-│   ├── base/
-│   │   ├── __init__.py
-│   │   └── adapter_base.py           # 适配器抽象基类
-│   ├── flocks/
-│   │   ├── __init__.py
-│   │   └── flocks_adapter.py         # Flocks 适配器
-│   ├── trae/
-│   │   ├── __init__.py
-│   │   └── trae_adapter.py           # Trae IDE 适配器
-│   ├── claude_code/
-│   │   ├── __init__.py
-│   │   └── claude_code_adapter.py    # Claude Code 适配器
-│   ├── cursor/
-│   │   ├── __init__.py
-│   │   └── cursor_adapter.py         # Cursor IDE 适配器
-│   └── deepseek_v4/
-│       ├── __init__.py
-│       ├── optimizer.py              # DeepSeek V4 性能优化器
-│       └── deepseek_adapter.py       # DeepSeek V4 专用适配
+├── adapters/
+│   ├── base/adapter_base.py           # 适配器抽象基类
+│   ├── trae/trae_adapter.py           # Trae IDE 适配器
+│   ├── flocks/flocks_adapter.py       # Flocks 适配器 (YAML+批量)
+│   ├── claude_code/                   # Claude Code 适配器
+│   ├── cursor/cursor_adapter.py       # Cursor IDE 适配器
+│   └── deepseek_v4/                   # DeepSeek V4 适配器 + 优化器
 │
-├── integration/                       # 统一接口层
-│   ├── __init__.py
-│   ├── unified_interface.py          # CAUI 统一接口核心
-│   ├── agent_registry.py             # Agent注册与发现中心
-│   ├── skill_router.py               # 智能路由引擎
-│   └── prompt_builder.py             # 跨平台Prompt构建器
+├── integration/
+│   ├── unified_interface.py           # CAUI统一接口 + AgentRegistry
+│   ├── skill_router.py                # 智能路由引擎
+│   └── prompt_builder.py              # 跨平台Prompt构建器
 │
-├── scripts/                           # 工具脚本
-│   ├── migration_tools.py            # 技能迁移工具 (A→统一, B→统一)
-│   ├── index_generator.py            # 索引自动生成工具
-│   ├── compliance_checker.py         # 合规性自动检查
-│   └── benchmark.py                  # 性能基准测试
+├── scripts/
+│   ├── index_generator.py             # 统一索引生成器
+│   ├── migration_tools.py             # 技能格式迁移工具
+│   ├── compliance_checker.py          # 合规性自动检查
+│   └── benchmark.py                   # 性能基准测试
 │
-├── tests/                             # 测试套件
-│   ├── test_adapters.py
-│   ├── test_integration.py
-│   ├── test_deepseek_optimizer.py
-│   └── test_compliance.py
-│
-└── docs/                              # 文档
-    ├── CONTRIBUTING.md
-    ├── COMPLIANCE_REPORT.md
-    └── ECOSYSTEM_CHECKLIST.md
+└── tests/
+    └── test_integration.py            # 28项单元测试
 ```
 
 ---
 
 ## 🚀 快速开始
 
-### 1. 克隆项目
+### Claude Code
 ```bash
-git clone https://github.com/br0ny4/CyberSecuritySkills.git
-cd CyberSecuritySkills
+npx skills add br0ny4/CyberSecuritySkills
 ```
 
-### 2. 安装依赖
-```bash
-pip install -r requirements.txt
-```
-
-### 3. 生成统一索引
-```bash
-python scripts/index_generator.py --source-a ../CyberSecurity-Skills --source-b ../Anthropic-Cybersecurity-Skills
-```
-
-### 4. 在目标Agent中使用
-
-**Trae / Cursor:**
+### Trae / Cursor
 ```json
 {
   "skills": [{
@@ -185,26 +155,20 @@ python scripts/index_generator.py --source-a ../CyberSecurity-Skills --source-b 
 }
 ```
 
-**Claude Code:**
+### Flocks
 ```bash
-npx skills add br0ny4/CyberSecuritySkills
+flocks skill install cybersecurity-unified --source local --path /path/to/CyberSecuritySkills
 ```
 
-**Flocks:**
-```bash
-flocks skill install cybersecurity-unified --source local --path /path/to/repo
-```
-
-**DeepSeek V4 (API直接调用):**
+### DeepSeek V4 (API直接调用)
 ```python
-from adapters.deepseek_v4.deepseek_adapter import DeepSeekSkillAdapter
+from adapters.deepseek_v4.deepseek_adapter import DeepSeekV4Adapter
 
-adapter = DeepSeekSkillAdapter(
-    skill_repo_path="/path/to/repo",
-    optimize_for="accuracy",  # or "speed", "cost"
-    max_context=1_000_000      # V4 supports 1M context
+adapter = DeepSeekV4Adapter(
+    skill_repo_path="/path/to/CyberSecuritySkills",
+    api_key="sk-xxx",
+    model="deepseek-v4-flash"
 )
-
 result = adapter.execute_skill(
     skill_name="performing-memory-forensics-with-volatility3",
     context={"memory_dump": "/cases/case-001/memory.raw"}
@@ -213,95 +177,37 @@ result = adapter.execute_skill(
 
 ---
 
-## 🎯 五重框架映射
+## 🎯 七重框架映射
 
-本项目全面映射五大国际安全框架，确保技能在执行时自动关联合规要求：
-
-| 框架 | 版本 | 映射技能数 | 覆盖度 |
-|------|------|-----------|--------|
-| **MITRE ATT&CK** | v18 | 800+ | 14/14 Tactics |
-| **NIST CSF 2.0** | 2.0 | 700+ | 6/6 Functions |
-| **MITRE ATLAS** | v5.4 | 120+ | 16/16 Tactics |
-| **MITRE D3FEND** | v1.3 | 300+ | 7/7 Categories |
-| **NIST AI RMF** | 1.0 | 100+ | 4/4 Functions |
-| **等级保护 2.0** | GB/T 22239 | 400+ | 全类别 |
-| **ISO 27001:2022** | 2022 | 500+ | Annex A |
+| 框架 | 版本 | 覆盖 |
+|------|------|------|
+| **MITRE ATT&CK** | v18 | 14/14 Tactics |
+| **NIST CSF 2.0** | 2.0 | 6/6 Functions |
+| **MITRE ATLAS** | v5.4 | 16/16 Tactics |
+| **MITRE D3FEND** | v1.3 | 7/7 Categories |
+| **NIST AI RMF** | 1.0 | 4/4 Functions |
+| **等级保护 2.0** | GB/T 22239 | 全类别 |
+| **ISO 27001:2022** | 2022 | Annex A |
 
 ---
 
-## 📊 技能标准化格式 (Unified)
+## 📊 新增安全技能亮点 (v1.0.0-pre Iteration #3)
 
-每个技能文件基于 `agentskills.io` 开放标准，融合两个源仓库的最佳实践：
+### 来自 addyosmani/agent-skills
+- **OWASP Top 10 全防**: SQL注入→参数化查询 / XSS→DOMPurify / 认证→bcrypt+Session / 访问控制→逐端点权限验证 / 安全配置→Helmet+CSP+CORS
+- **三级安全边界**: Always Do (无条件) / Ask First (需审批) / Never Do (绝对禁止)
+- **npm audit 分类决策树**: Critical→立即修复 / Moderate→下版本 / Low→定期
+- **安全审计Agent角色**: 漏洞检测 + 威胁建模 + OWASP 全面评估
 
-```yaml
----
-# ===== 统一技能Schema =====
-name: skill-name-in-kebab-case            # 唯一标识符 [必填]
-description: >-                            # 技能描述 (AI Agent 发现用) [必填]
-  详细描述此技能的用途、适用场景和关键能力，包含关键词以优化搜索匹配。
-domain: cybersecurity                      # 领域分类 [必填]
-subdomain: digital-forensics               # 子领域 [必填]
+### 来自 vercel-labs/deepsec
+- **全代码仓Agent漏洞扫描管线**: scan→process→triage→revalidate→export
+- **PR Diff增量审查**: `process --diff` 只审查变更代码
+- **分布式执行**: Vercel Sandbox微VM并发扫描大型代码库
 
-# ===== 多框架映射 =====
-mitre_attack: [T1003, T1040]              # MITRE ATT&CK技术
-nist csf: [DE.CM-01, RS.AN-03]           # NIST CSF 2.0
-mitre_atlas: [AML.T0047]                  # MITRE ATLAS (AI安全)
-mitre_d3fend: [D3-MA, D3-PSMD]           # MITRE D3FEND (防御)
-nist_ai_rmf: [MEASURE-2.6]               # NIST AI RMF
-cn_standard: [等保2.0-安全计算环境]       # 国内合规标准
-
-# ===== 元数据 =====
-version: "1.0.0"                           # 语义化版本
-difficulty: "★★★☆"                        # 难度 1-5星 (中英双轨)
-author: unified-team                       # 作者
-license: MIT                               # 许可证
-source_repos:                              # 来源追溯
-  - Hi-FullHouse/CyberSecurity-Skills
-  - mukul975/Anthropic-Cybersecurity-Skills
-
-# ===== AI Agent 优化 =====
-estimated_tokens: 1800                     # 预估Token消耗
-execution_time: "medium"                   # short/medium/long
-requires_tools: [volatility3, yara]       # 依赖工具
-platforms: [all]                           # 适配平台
-optimized_for: [deepseek-v4, claude]      # 专项优化目标
-
-# ===== 中文字段 (国内Agent适配) =====
-name_cn: Volatility3内存取证分析
-category_cn: 数字取证
-difficulty_cn: ★★★★
-tags_cn: [取证, 内存分析, Volatility3, 应急响应]
----
-
-# {技能中文标题} / {Skill English Title}
-
-## 📋 概述 / Overview
-技能核心定义、适用场景、前置条件
-
-## 🎯 使用时机 / When to Use
-AI Agent 触发条件：何时应自动激活此技能
-
-## 🔧 前置条件 / Prerequisites
-运行时依赖、工具版本、访问权限
-
-## 📐 工作流程 / Workflow
-逐步执行指南 (含命令示例)
-### Step 1: ...
-### Step 2: ...
-...
-
-## ✅ 验证方法 / Verification
-如何确认技能执行成功
-
-## 🔍 输出格式 / Output Format
-预期产出的数据结构和报告模板
-
-## 🛠️ 工具链 / Tools & Systems
-推荐工具与替代方案
-
-## 📚 参考资源 / References
-外部链接、标准文档、相关CVE
-```
+### 来自 ruvnet/ruflo
+- **CVE实时扫描**: 代码库 vs CVE数据库匹配
+- **AiDefence**: Prompt注入拦截 + PII检测 + 内容安全扫描 (AI Agent自身安全)
+- **路径遍历防护**: 输入校验 + 目录遍历检测
 
 ---
 
@@ -309,19 +215,22 @@ AI Agent 触发条件：何时应自动激活此技能
 
 本项目遵守 [Contributor Covenant 行为准则](CODE_OF_CONDUCT.md)。欢迎通过 Issue 和 PR 贡献。
 
-### 贡献技能流程
-1. Fork 本仓库
-2. 按照统一 Schema 编写技能文件
-3. 运行 `python scripts/index_generator.py --validate` 验证格式
-4. 提交 PR 并 @reviewers
+### 贡献新技能仓库
+1. 在 Issue 中提交候选 GitHub 仓库 URL
+2. 说明安全领域覆盖和技能格式
+3. 审核通过后纳入 [SOURCE_CATALOG.md](docs/SOURCE_CATALOG.md)
+4. 运行 `python scripts/index_generator.py` 生成统一索引
 
 ---
 
 ## 📄 许可证
 
 本项目基于 [MIT License](LICENSE) 开源。
-上游仓库分别基于 MIT (Hi-FullHouse/CyberSecurity-Skills) 和 Apache-2.0 (mukul975/Anthropic-Cybersecurity-Skills)。
+
+上游仓库许可证:
+- MIT: Hi-FullHouse/CyberSecurity-Skills, addyosmani/agent-skills, ruvnet/ruflo
+- Apache-2.0: mukul975/Anthropic-Cybersecurity-Skills, vercel-labs/deepsec
 
 ---
 
-> **Powered by Unified Cybersecurity AI Skills Framework · v1.0.0-pre**
+> **Powered by CyberSecuritySkills · v1.0.0-pre · [SOURCE_CATALOG.md](docs/SOURCE_CATALOG.md)**
