@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sqlmap": {
+      "command": "python",
+      "args": ["mcp/scripts/sqlmap_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "SQLMAP_PATH": "/usr/bin/sqlmap"
+      }
+    }
+  }
+}

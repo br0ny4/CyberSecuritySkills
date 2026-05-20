@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "wireshark": {
+      "command": "python",
+      "args": ["mcp/scripts/wireshark_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "TSHARK_PATH": "/usr/bin/tshark",
+        "PCAP_DIR": "/cases/pcaps"
+      }
+    }
+  }
+}

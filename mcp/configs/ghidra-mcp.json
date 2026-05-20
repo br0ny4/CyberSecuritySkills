@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ghidra": {
+      "command": "python",
+      "args": ["mcp/scripts/ghidra_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "GHIDRA_BRIDGE_HOST": "127.0.0.1",
+        "GHIDRA_BRIDGE_PORT": "4768"
+      }
+    }
+  }
+}

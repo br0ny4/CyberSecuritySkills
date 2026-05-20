@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "metasploit": {
+      "command": "python",
+      "args": ["mcp/scripts/metasploit_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "MSF_RPC_HOST": "127.0.0.1",
+        "MSF_RPC_PORT": "55553",
+        "MSF_RPC_USER": "msf",
+        "MSF_RPC_PASS": "your_password"
+      }
+    }
+  }
+}

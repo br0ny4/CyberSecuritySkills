@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "binaryninja": {
+      "command": "python",
+      "args": ["mcp/scripts/binaryninja_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "BN_LICENSE_FILE": "/path/to/license.dat"
+      }
+    }
+  }
+}

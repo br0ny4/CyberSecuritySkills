@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "CyberSecuritySkills MCP Registry",
+  "description": "网络安全工具 MCP 服务器统一注册清单 — 供 AI Agent 自动发现与配置",
+  "version": "1.0.0",
+  "updated": "2026-05-20",
+
+  "servers": [
+    {
+      "id": "ida-pro-mcp",
+      "name": "IDA Pro MCP",
+      "description": "IDA Pro 逆向工程 MCP 服务器 — 反编译/反汇编/交叉引用/调试/内存操作",
+      "repo": "https://github.com/mrexodia/ida-pro-mcp",
+      "stars": "high",
+      "license": "MIT",
+      "tier": 1,
+      "category": "reverse-engineering",
+      "transport": ["stdio", "sse", "streamable-http"],
+      "install": {
+        "claude_code": "claude plugin marketplace add mrexodia/claude-marketplace && claude plugin install ida-pro-mcp@mrexodia",
+        "manual": "uv run ida-pro-mcp --transport http://127.0.0.1:8744/sse",
+        "headless": "uv run idalib-mcp --host 127.0.0.1 --port 8745 path/to/binary"
+      },
+      "tools": ["decompile", "disasm", "xrefs_to", "callees", "lookup_funcs", "int_convert", "set_comments", "patch_asm", "get_bytes", "get_string", "stack_frame", "read_struct", "search_structs", "define_func", "declare_type", "dbg_start", "dbg_add_bp", "dbg_regs", "dbg_stacktrace"],
+      "resources": ["ida://idb/metadata", "ida://idb/segments", "ida://idb/entrypoints", "ida://cursor", "ida://types", "ida://structs", "ida://import/{name}", "ida://xrefs/from/{addr}"]
+    },
+    {
+      "id": "burpsuite-mcp",
+      "name": "BurpSuite MCP Server",
+      "description": "BurpSuite Web渗透测试 MCP — 代理拦截/扫描/漏洞检测/流量分析",
+      "repo": "https://github.com/X3r0K/BurpSuite-MCP-Server",
+      "stars": 1400,
+      "license": "MIT",
+      "tier": 1,
+      "category": "web-pentesting",
+      "transport": ["http-sse"],
+      "install": {
+        "manual": "git clone https://github.com/X3r0K/BurpSuite-MCP-Server.git && cd BurpSuite-MCP-Server && pip install -r requirements.txt && python main.py"
+      },
+      "endpoints": {
+        "proxy": "/proxy/intercept",
+        "scanner_start": "/scanner/start",
+        "scanner_status": "/scanner/status/{id}",
+        "logger": "/logger/logs",
+        "vulnerabilities": "/logger/vulnerabilities",
+        "vulnerabilities_severity": "/logger/vulnerabilities/severity",
+        "analysis": "/logger/analysis"
+      },
+      "vuln_detection": ["XSS", "SQLi", "Path Traversal", "File Inclusion", "SSRF", "XXE", "CSRF", "Open Redirect", "Command Injection"],
+      "env_vars": ["BURP_API_KEY", "BURP_API_HOST", "BURP_API_PORT", "BURP_PROXY_HOST", "BURP_PROXY_PORT", "MCP_SERVER_HOST", "MCP_SERVER_PORT"]
+    },
+    {
+      "id": "shodan-mcp",
+      "name": "Shodan MCP",
+      "description": "Shodan 网络空间搜索引擎 MCP — IP查询/设备搜索/DNS/CVE/CPE",
+      "repo": "https://github.com/BurtTheCoder/Shodan-MCP",
+      "stars": 186,
+      "license": "MIT",
+      "tier": 1,
+      "category": "threat-intelligence",
+      "transport": ["stdio"],
+      "install": {
+        "manual": "git clone https://github.com/BurtTheCoder/Shodan-MCP.git && cd Shodan-MCP && pip install -r requirements.txt"
+      },
+      "tools": ["ip_lookup", "device_search", "dns_lookup", "cve_query", "cpe_query"],
+      "env_vars": ["SHODAN_API_KEY"]
+    },
+    {
+      "id": "virustotal-mcp",
+      "name": "VirusTotal MCP",
+      "description": "VirusTotal 多引擎恶意软件检测 MCP — 文件/URL/Hash扫描",
+      "repo": "community (腾讯云MCP广场收录)",
+      "license": "MIT",
+      "tier": 2,
+      "category": "threat-intelligence",
+      "transport": ["stdio"],
+      "tools": ["file_scan", "url_scan", "hash_lookup", "domain_report"],
+      "env_vars": ["VIRUSTOTAL_API_KEY"]
+    },
+    {
+      "id": "ghidra-mcp",
+      "name": "Ghidra MCP (Wrapper)",
+      "description": "Ghidra 开源逆向工程 MCP 封装 — ghidra_bridge Python API → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/ghidra_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "reverse-engineering",
+      "transport": ["stdio"],
+      "tools": ["ghidra_decompile", "ghidra_disassemble", "ghidra_xrefs", "ghidra_search", "ghidra_rename", "ghidra_set_type"],
+      "dependencies": ["ghidra-bridge", "mcp"],
+      "config_file": "mcp/configs/ghidra-mcp.json"
+    },
+    {
+      "id": "nmap-mcp",
+      "name": "Nmap MCP (Wrapper)",
+      "description": "Nmap 端口扫描 MCP 封装 — python-nmap → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/nmap_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "reconnaissance",
+      "transport": ["stdio"],
+      "tools": ["nmap_scan", "nmap_os_detect", "nmap_service_detect", "nmap_vuln_scan"],
+      "dependencies": ["python-nmap", "mcp"],
+      "config_file": "mcp/configs/nmap-mcp.json"
+    },
+    {
+      "id": "wireshark-mcp",
+      "name": "Wireshark/tshark MCP (Wrapper)",
+      "description": "Wireshark 网络抓包分析 MCP 封装 — tshark CLI → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/wireshark_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "network-security",
+      "transport": ["stdio"],
+      "tools": ["tshark_capture", "tshark_read", "tshark_stats", "tshark_follow_stream", "tshark_protocol_hierarchy"],
+      "dependencies": ["tshark", "pyshark", "mcp"],
+      "config_file": "mcp/configs/wireshark-mcp.json"
+    },
+    {
+      "id": "metasploit-mcp",
+      "name": "Metasploit MCP (Wrapper)",
+      "description": "Metasploit 漏洞利用框架 MCP 封装 — msfrpc → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/metasploit_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "exploitation",
+      "transport": ["stdio"],
+      "tools": ["msf_search", "msf_exploit", "msf_sessions", "msf_payloads"],
+      "dependencies": ["msfrpc", "mcp"],
+      "config_file": "mcp/configs/metasploit-mcp.json"
+    },
+    {
+      "id": "volatility-mcp",
+      "name": "Volatility3 MCP (Wrapper)",
+      "description": "Volatility3 内存取证 MCP 封装 — volatility3 Python API → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/volatility_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "digital-forensics",
+      "transport": ["stdio"],
+      "tools": ["vol_pslist", "vol_netscan", "vol_malfind", "vol_dumpfiles", "vol_yara", "vol_hashdump", "vol_cmdline"],
+      "dependencies": ["volatility3", "mcp"],
+      "config_file": "mcp/configs/volatility-mcp.json"
+    },
+    {
+      "id": "sqlmap-mcp",
+      "name": "sqlmap MCP (Wrapper)",
+      "description": "sqlmap SQL注入自动化 MCP 封装 — sqlmap CLI → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/sqlmap_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "exploitation",
+      "transport": ["stdio"],
+      "tools": ["sqlmap_scan", "sqlmap_dump", "sqlmap_os_shell"],
+      "dependencies": ["sqlmap", "mcp"],
+      "config_file": "mcp/configs/sqlmap-mcp.json"
+    },
+    {
+      "id": "binaryninja-mcp",
+      "name": "Binary Ninja MCP (Wrapper)",
+      "description": "Binary Ninja 逆向分析 MCP 封装 — binaryninja Python API → MCP stdio",
+      "repo": "bundled (CyberSecuritySkills/mcp/scripts/binaryninja_mcp_server.py)",
+      "license": "MIT",
+      "tier": 3,
+      "category": "reverse-engineering",
+      "transport": ["stdio"],
+      "tools": ["bn_decompile", "bn_disassemble", "bn_xrefs", "bn_rename", "bn_set_type", "bn_get_il"],
+      "dependencies": ["binaryninja", "mcp"],
+      "config_file": "mcp/configs/binaryninja-mcp.json"
+    }
+  ],
+
+  "discovery_sources": [
+    {
+      "name": "punkpeye/awesome-mcp-servers",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "description": "全球最大 MCP 服务器收录列表 (5000+ servers)",
+      "category_filter": "security"
+    },
+    {
+      "name": "Tencent Cloud MCP Square",
+      "url": "https://cloud.tencent.com/developer/mcp",
+      "description": "腾讯云 MCP 广场 — 安全扫描 + 收录"
+    },
+    {
+      "name": "appscodelove/awesome-mcp-security",
+      "url": "https://github.com/appscodelove/awesome-mcp-security",
+      "description": "安全专项 MCP 服务器精选列表"
+    }
+  ]
+}

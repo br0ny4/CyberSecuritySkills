@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "nmap": {
+      "command": "python",
+      "args": ["mcp/scripts/nmap_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "NMAP_PATH": "/usr/bin/nmap",
+        "NMAP_MAX_RETRIES": "2",
+        "NMAP_DEFAULT_PORTS": "1-1000"
+      }
+    }
+  }
+}

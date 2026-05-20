@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "volatility3": {
+      "command": "python",
+      "args": ["mcp/scripts/volatility_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "VOLATILITY_SYMBOLS_PATH": "/opt/volatility3/symbols",
+        "VOLATILITY_OUTPUT_DIR": "/cases/volatility_output"
+      }
+    }
+  }
+}

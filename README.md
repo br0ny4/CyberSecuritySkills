@@ -2,7 +2,7 @@
 
 > **The Unified Cross-Agent Cybersecurity Skill Framework for AI Agents**
 >
-> 融合 7 大源仓库 | 41+ 安全领域 | 800+ AI可调用技能 | 7重框架映射 | 6+ AI Agent 平台原生支持
+> 融合 7 大源仓库 | 41+ 安全领域 | 800+ AI可调用技能 | 7重框架映射 | 11+ MCP 工具集成 | 6+ AI Agent 平台原生支持
 
 ---
 
@@ -220,6 +220,23 @@ result = adapter.execute_skill(
 2. 说明安全领域覆盖和技能格式
 3. 审核通过后纳入 [SOURCE_CATALOG.md](docs/SOURCE_CATALOG.md)
 4. 运行 `python scripts/index_generator.py` 生成统一索引
+
+---
+
+## 🔌 MCP 工具集成 (11+ 安全工具 MCP)
+
+让 AI Agent 通过 MCP 协议直接操控 BurpSuite、IDA Pro、Ghidra 等安全工具。
+
+| Tier | 工具 | MCP 仓库 | 状态 |
+|------|------|----------|------|
+| 🥇 | **IDA Pro** | [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | ✅ 生产级 |
+| 🥇 | **BurpSuite** | [X3r0K/BurpSuite-MCP-Server](https://github.com/X3r0K/BurpSuite-MCP-Server) | ✅ 1.4K⭐ |
+| 🥇 | **Shodan** | [BurtTheCoder/Shodan-MCP](https://github.com/BurtTheCoder/Shodan-MCP) | ✅ 已验证 |
+| 🥈 | **VirusTotal** | 腾讯云MCP广场 | ✅ 已验证 |
+| 🥉 | **Ghidra / Nmap / Wireshark / Metasploit / Volatility3 / sqlmap / Binary Ninja** | 本项目封装 | ✅ 配置模板 |
+
+📖 完整 MCP 集成指南: [docs/MCP_INTEGRATION.md](docs/MCP_INTEGRATION.md)  
+📋 MCP 注册清单: [mcp/mcp-registry.json](mcp/mcp-registry.json)
 
 ---
 

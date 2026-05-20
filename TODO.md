@@ -1,7 +1,7 @@
 # 📋 CyberSecuritySkills — 长周期迭代计划
 
 > **版本**: v1.0.0-pre · **开始日期**: 2026-05-19  
-> **迭代模式**: 4阶段 × 18里程碑, 每阶段2-6周
+> **迭代模式**: 4阶段 × 19里程碑, 每阶段2-6周
 
 ---
 
@@ -103,7 +103,19 @@
 - [ ] 跨平台兼容性矩阵 (Trae/Flocks/Claude/Cursor/DeepSeek V4)
 - [ ] 边界条件测试 (空仓库/文件损坏/超大技能/API超时)
 
-### M14: SkillsMP + SkillStore 持续发现 [P2]
+### M14: MCP 工具集成 [P0] ✅
+- [x] 调研网络安全工具 MCP 生态
+- [x] 接入 IDA Pro MCP (mrexodia/ida-pro-mcp)
+- [x] 接入 BurpSuite MCP (X3r0K/BurpSuite-MCP-Server)
+- [x] 接入 Shodan MCP (BurtTheCoder/Shodan-MCP)
+- [x] 创建 mcp-registry.json 统一注册清单
+- [x] 7个 MCP 封装模板 (Ghidra/Nmap/Wireshark/Metasploit/Volatility/sqlmap/BinaryNinja)
+- [x] Ghidra MCP Server 完整实现 (mcp/scripts/ghidra_mcp_server.py)
+- [x] 编写 docs/MCP_INTEGRATION.md 完整集成指南
+- [ ] 其余 6 个 MCP wrapper 完整实现
+- [ ] MCP 与 Skills 联合编排端到端测试
+
+### M15: SkillsMP + SkillStore 持续发现 [P2]
 - [ ] 编写 sync_skillsmp.py 周期同步脚本
 - [ ] 编写 sync_skillstore.py 安全审核技能同步
 - [ ] 首次同步 top-50 安全技能
@@ -113,26 +125,26 @@
 
 ## Phase 4: 发布与生态推广 (Week 11-16) 🚀
 
-### M15: 版本发布 v1.0.0 [P0]
+### M16: 版本发布 v1.0.0 [P0]
 - [ ] 版本冻结 + 代码审查
 - [ ] CHANGELOG.md 最终版
 - [ ] GitHub Release v1.0.0
 - [ ] PyPI 发布
 
-### M16: 生态适配调试 [P1]
+### M17: 生态适配调试 [P1]
 - [ ] Flocks 官方推荐列表 PR 提交
 - [ ] Trae Skill Marketplace 提交
 - [ ] agentskills.io 注册
 - [ ] Awesome List 收录 (awesome-cybersecurity / awesome-ai-agents)
 
-### M17: 合规与安全打磨 [P1]
+### M18: 合规与安全打磨 [P1]
 - [x] 合规性自动检查框架 (compliance_checker.py)
 - [x] 合规性审查报告 (COMPLIANCE_REPORT.md)
 - [ ] 安全审计 (pip-audit / bandit)
 - [ ] safeskill.cn 安全检测提交
 - [ ] NOTICE 文件 (Apache-2.0合规)
 
-### M18: v1.1 → v2.0 路线图 [P2]
+### M19: v1.1 → v2.0 路线图 [P2]
 
 #### v1.1.0 (预计 2026-07)
 - [ ] 接入 3-5 个社区推荐安全技能仓库
