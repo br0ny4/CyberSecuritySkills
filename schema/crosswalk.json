@@ -6,10 +6,11 @@
   "generated": "2026-05-19",
 
   "frameworks": {
-    "mitre_attack": { "version": "v18", "url": "https://attack.mitre.org/versions/v18/" },
+    "mitre_attack": { "version": "v19.1", "url": "https://attack.mitre.org/versions/v19/" },
     "nist_csf": { "version": "2.0", "url": "https://www.nist.gov/cyberframework" },
     "mitre_atlas": { "version": "v5.4", "url": "https://atlas.mitre.org/" },
     "mitre_d3fend": { "version": "v1.3", "url": "https://d3fend.mitre.org/" },
+    "mitre_f3": { "version": "v1.1", "url": "https://fightfraud.mitre.org/" },
     "nist_ai_rmf": { "version": "1.0", "url": "https://airc.nist.gov/AI_RMF" },
     "cn_djbh_20": { "version": "GB/T 22239-2019", "url": "https://www.djbh.net/" },
     "iso_27001": { "version": "2022", "url": "https://www.iso.org/standard/82875.html" }
@@ -148,6 +149,37 @@
       "functions": ["RS"],
       "nist_csf_categories": ["RS.AN"],
       "cn_djbh": ["安全管理中心-审计"]
+    },
+    "fraud-detection": {
+      "primary": "mitre_f3",
+      "tactics": ["F3.TA01", "F3.TA02", "F3.TA03"],
+      "nist_csf": ["DE.CM", "ID.RA"]
+    }
+  },
+
+  "mitre_f3_to_attack": {
+    "F3.TA01_FraudOrigination": ["TA0042", "TA0001"],
+    "F3.TA02_FraudExecution": ["TA0002", "TA0043"],
+    "F3.TA03_FraudExfiltration": ["TA0010", "TA0009"],
+    "F3.TA04_FraudDetectionEvasion": ["TA0005", "T1562"],
+    "F3.TA05_FraudPersistence": ["TA0003"],
+    "F3.TA06_FraudImpact": ["TA0040"],
+    "F3.TA07_FraudLateralMovement": ["TA0008"],
+    "F3.TA08_FraudCollection": ["TA0009"]
+  },
+
+  "attack_v191_additions": {
+    "TA0042_ResourceDevelopment": {
+      "new_techniques": ["T1583.009", "T1584.010", "T1587.005"],
+      "description": "Acquire infrastructure and capabilities used in targeting"
+    },
+    "TA0005_DefenseEvasion": {
+      "new_techniques": ["T1562.015", "T1574.014"],
+      "description": "New defense evasion sub-techniques in v19.1"
+    },
+    "TA0001_InitialAccess": {
+      "new_techniques": ["T1566.004", "T1189.001"],
+      "description": "New initial access vectors"
     }
   }
 }

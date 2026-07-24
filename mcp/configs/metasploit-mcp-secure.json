@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "metasploit": {
+      "command": "python",
+      "args": ["mcp/scripts/metasploit_mcp_server.py"],
+      "env": {
+        "MSFRPC_HOST": "127.0.0.1",
+        "MSFRPC_PORT": "55553",
+        "MSFRPC_USER": "msf",
+        "MSFRPC_PASS": "${MSFRPC_PASSWORD}"
+      },
+      "security": {
+        "trust_tier": "restricted",
+        "minimal_tools": ["msf_search"],
+        "blocked_tools": ["msf_exploit", "msf_payloads"],
+        "network": {
+          "allowed_targets": ["127.0.0.1"],
+          "blocked_targets": ["*"],
+          "require_approval_per_target": true
+        },
+        "execution_policy": "ask_first",
+        "audit_log": true,
+        "requires_sandbox": true,
+        "owasp_mcp_top10": {
+          "MCP01_PermissionDrift": "passed",
+          "MCP02_ToolPoisoning": "warning",
+          "MCP03_ShadowServer": "passed",
+          "MCP05_UncheckedExecution": "warning"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "nmap": {
+      "command": "python",
+      "args": ["mcp/scripts/nmap_mcp_server.py"],
+      "cwd": "/path/to/CyberSecuritySkills",
+      "env": {
+        "NMAP_PATH": "/usr/bin/nmap",
+        "NMAP_MAX_RETRIES": "2",
+        "NMAP_DEFAULT_PORTS": "1-1000"
+      },
+      "security": {
+        "trust_tier": "verified",
+        "minimal_tools": ["nmap_scan", "nmap_os_detect", "nmap_service_detect"],
+        "blocked_tools": [],
+        "network": {
+          "allowed_targets": ["127.0.0.1", "192.168.0.0/16", "10.0.0.0/8", "172.16.0.0/12"],
+          "blocked_targets": ["0.0.0.0", "8.8.8.8"],
+          "max_ports_per_scan": 1000
+        },
+        "execution_policy": "ask_first",
+        "audit_log": true,
+        "owasp_mcp_top10": {
+          "MCP01_PermissionDrift": "passed",
+          "MCP02_ToolPoisoning": "passed",
+          "MCP03_ShadowServer": "not_applicable"
+        }
+      }
+    }
+  }
+}
